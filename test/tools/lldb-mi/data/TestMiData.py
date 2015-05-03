@@ -17,7 +17,8 @@ class MiDataTestCase(lldbmi_testcase.MiTestCaseBase):
         """Test that 'lldb-mi --interpreter' works for -data-disassemble."""
 
         self.spawnLldbMi(args = None)
-
+        self.expect(self.child_prompt, exactly = True)
+		
         # Load executable
         self.runCmd("-file-exec-and-symbols %s" % self.myexe)
         self.expect("\^done")
@@ -46,7 +47,8 @@ class MiDataTestCase(lldbmi_testcase.MiTestCaseBase):
         """Test that 'lldb-mi --interpreter' works for -data-read-memory-bytes."""
 
         self.spawnLldbMi(args = None)
-
+        self.expect(self.child_prompt, exactly = True)
+		
         # Load executable
         self.runCmd("-file-exec-and-symbols %s" % self.myexe)
         self.expect("\^done")
@@ -85,7 +87,8 @@ class MiDataTestCase(lldbmi_testcase.MiTestCaseBase):
         """Test that 'lldb-mi --interpreter' works for -data-list-register-names."""
 
         self.spawnLldbMi(args = None)
-
+        self.expect(self.child_prompt, exactly = True)
+		
         # Load executable
         self.runCmd("-file-exec-and-symbols %s" % self.myexe)
         self.expect("\^done")
@@ -112,7 +115,8 @@ class MiDataTestCase(lldbmi_testcase.MiTestCaseBase):
         """Test that 'lldb-mi --interpreter' works for -data-list-register-values."""
 
         self.spawnLldbMi(args = None)
-
+        self.expect(self.child_prompt, exactly = True)
+		
         # Load executable
         self.runCmd("-file-exec-and-symbols %s" % self.myexe)
         self.expect("\^done")
@@ -139,7 +143,8 @@ class MiDataTestCase(lldbmi_testcase.MiTestCaseBase):
         """Test that 'lldb-mi --interpreter' works for -data-info-line."""
 
         self.spawnLldbMi(args = None)
-
+        self.expect(self.child_prompt, exactly = True)
+		
         # Load executable
         self.runCmd("-file-exec-and-symbols %s" % self.myexe)
         self.expect("\^done")
