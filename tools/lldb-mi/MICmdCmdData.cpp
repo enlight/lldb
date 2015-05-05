@@ -687,7 +687,6 @@ CMICmdCmdDataReadMemoryBytes::Execute(void)
         return MIstatus::failure;
     }
 
-    error.Clear();
     const MIuint64 nReadBytes = sbProcess.ReadMemory(static_cast<lldb::addr_t>(nAddrStart), (void *)m_pBufferMemory, nAddrNumBytes, error);
     if (nReadBytes != nAddrNumBytes)
     {
