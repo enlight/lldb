@@ -68,15 +68,15 @@ CMICmdArgValConsume::Validate(CMICmdArgContext &vwArgContext)
     {
         const CMIUtilString & rTxt( *it );
         
-	if ( rTxt.compare( "--" ) == 0 )
+        if ( rTxt.compare( "--" ) == 0 )
         {
             m_bFound = true;
             m_bValid = true;
-	    return MIstatus::success;
-	}
+            return MIstatus::success;
+        }
 	
-	if ( !vwArgContext.RemoveArg( rTxt ) )
-	    return MIstatus::failure;
+        if ( !vwArgContext.RemoveArg( rTxt ) )
+            return MIstatus::failure;
 
         // Next
         ++it;
