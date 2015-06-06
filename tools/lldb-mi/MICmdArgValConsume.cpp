@@ -59,7 +59,7 @@ bool
 CMICmdArgValConsume::Validate(CMICmdArgContext &vwArgContext)
 {
     if (vwArgContext.IsEmpty())
-        return MIstatus::success;
+        return m_bMandatory ? MIstatus::failure : MIstatus::success;
 
     // Consume the optional file, line, linenum arguments till the mode '--' argument
     const CMIUtilString::VecString_t vecOptions(vwArgContext.GetArgs());
